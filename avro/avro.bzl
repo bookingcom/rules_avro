@@ -75,7 +75,7 @@ def _common_dir(dirs):
 
     return _join_list(shortest, "/")
 
-def avro_repositories(version = "1.9.1"):
+def avro_repositories(version = "1.9.1", repositories = ["https://repo1.maven.org/maven2/"]):
     """
     version: str = "1.9.1" - the version of avro to fetch
     """
@@ -91,9 +91,7 @@ def avro_repositories(version = "1.9.1"):
         name = MAVEN_REPO_NAME,
         fetch_sources = True,
         artifacts = artifacts,
-        repositories = [
-            "https://repo1.maven.org/maven2/",
-        ],
+        repositories = repositories,
     )
 
 def _new_idl2schemata_command(ctx, src_file, gen_dir):
